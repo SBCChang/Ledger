@@ -1,0 +1,28 @@
+﻿@model IEnumerable<LedgerViewModel>
+
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-bordered table-hover">
+            <tr>
+                <th>#</th>
+                <th>類別</th>
+                <th>日期</th>
+                <th>金額</th>
+            </tr>
+            @{var index = 1;}
+            @foreach (var item in Model)
+            {
+                if (index > 10)
+                {
+                    index = 1;
+                }
+                <tr>
+                    <td>@(index++)</td>
+                    <td>@item.LedgerType</td>
+                    <td>@item.Date.ToString("yyyy-MM-dd")</td>
+                    <td>@item.Amount.ToString("###,###,###,##0")</td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
