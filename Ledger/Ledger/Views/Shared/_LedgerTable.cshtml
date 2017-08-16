@@ -1,4 +1,4 @@
-﻿@model IEnumerable<LedgerViewModel>
+﻿@model IPagedList<LedgerViewModel>
 
 <div class="row">
     <div class="col-md-12">
@@ -24,5 +24,6 @@
                 </tr>
             }
         </table>
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page }));
     </div>
 </div>

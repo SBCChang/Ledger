@@ -14,7 +14,7 @@ namespace Ledger.Models
             _db = new LedgerDataContext();
         }
 
-        public IList<LedgerViewModel> GetList()
+        public IEnumerable<LedgerViewModel> GetData()
         {
 
             return _db.AccountBook.Select(a => new LedgerViewModel
@@ -22,7 +22,7 @@ namespace Ledger.Models
                 LedgerType = (LedgerType)a.Categoryyy,
                 Amount = a.Amounttt,
                 Date = a.Dateee
-            }).ToList();
+            }).OrderBy(a=>a.Date);
 
         }
 
