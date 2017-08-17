@@ -1,17 +1,19 @@
 ﻿using Ledger.Models;
-using System.Web.Mvc;
+using Ledger.Repositories;
 using PagedList;
+using System.Web.Mvc;
 
 namespace Ledger.Controllers
 {
     public class HomeController : Controller
     {
         private readonly LedgerService _ledgerService;
-        private int _pageSize = 10;
+        private readonly int _pageSize = 10;
 
         public HomeController()
         {
-            _ledgerService = new LedgerService();
+            var unitOfWork = new EFUnitOfWork();
+            _ledgerService = new LedgerService(unitOfWork);
         }
 
         public ActionResult Index(int? page)
