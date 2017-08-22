@@ -18,9 +18,7 @@ namespace Ledger.Controllers
 
         public ActionResult Index(int? page)
         {
-            var ledgers = _ledgerService.GetData();
-            var currentPage = page ?? 1;
-            var result = ledgers.ToPagedList(currentPage, _pageSize);
+            var result = _ledgerService.GetList().ToPagedList(page ?? 1, _pageSize);
 
             return View(result);
         }

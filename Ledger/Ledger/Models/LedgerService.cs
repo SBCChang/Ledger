@@ -17,14 +17,14 @@ namespace Ledger.Models
             _accountBookRep = new Repository<AccountBook>(_unitOfWork);
         }
 
-        public IEnumerable<LedgerViewModel> GetData()
+        public IList<LedgerViewModel> GetList()
         {
             return _accountBookRep.GetAllData().Select(a => new LedgerViewModel
             { 
                 LedgerType = (LedgerType)a.Categoryyy,
                 Amount = a.Amounttt,
                 Date = a.Dateee
-            }).OrderBy(a=>a.Date);
+            }).OrderBy(a=>a.Date).ToList();
         }
 
     }
