@@ -1,6 +1,7 @@
 ﻿using Ledger.Enum;
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.Web.Mvc;
 
 namespace Ledger.ViewModels
 {
@@ -12,6 +13,7 @@ namespace Ledger.ViewModels
 
         [Required]
         [Display(Name = "日期")]
+        [Remote("DateFormat", "Validate", ErrorMessage = "日期不得大於今天")]
         public DateTime Date { get; set; }
 
         [Required]

@@ -155,10 +155,12 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ValidateController.cs" />
     <Compile Include="Enum\LedgerType.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helper\ColorHtmlExtensions.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBook.cs" />
     <Compile Include="Models\LedgerDataContext.cs" />
@@ -199,6 +201,7 @@
   <ItemGroup>
     <Folder Include="fonts\" />
     <Folder Include="Scripts\" />
+    <Folder Include="Views\Validate\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">
