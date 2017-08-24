@@ -27,5 +27,15 @@ namespace Ledger.Models
             }).OrderBy(a=>a.Date).ToList();
         }
 
+        public void Add(AccountBook accountBook)
+        {
+            _accountBookRep.Create(accountBook);
+        }
+
+        public void Save()
+        {
+            _unitOfWork.Save();
+        }
+
     }
 }
