@@ -19,7 +19,6 @@
                 <tr>
                     <td>@(index++)</td>
                     <td>@item.LedgerType</td>
-                    <td><span style="@(Html.LedgerType(item.LedgerType) ? "color:blue" : "color:red")">@Html.DisplayFor(m => item.LedgerType)</span></td>
                     <td>@item.Date.ToString("yyyy-MM-dd")</td>
                     <td>@item.Amount.ToString("#,##")</td>
                 </tr>
