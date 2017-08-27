@@ -8,7 +8,7 @@ namespace Ledger.ViewModels
     public class LedgerViewModel
     {
         [Required]
-        [Display(Name ="類別")]
+        [Display(Name = "類別")]
         public LedgerType LedgerType { get; set; }
 
         [Required]

@@ -1,13 +1,18 @@
 ﻿@model IPagedList<LedgerViewModel>
 
+@helper ShowTdWithColor(string color, string text)
+{
+    <td bgcolor="@color">@text</td>
+}
+
 <div class="row">
     <div class="col-md-12">
         <table class="table table-bordered table-hover">
             <tr>
                 <th>#</th>
-                <th>類別</th>
-                <th>日期</th>
-                <th>金額</th>
+                <th>@Html.LabelFor(l=>l.FirstOrDefault().LedgerType)</th>
+                <th>@Html.LabelFor(l => l.FirstOrDefault().Date)</th>
+                <th>@Html.LabelFor(l => l.FirstOrDefault().Amount)</th>
             </tr>
             @{var index = 1;}
             @foreach (var item in Model)
@@ -18,7 +23,14 @@
                 }
                 <tr>
                     <td>@(index++)</td>
-                    <td>@item.LedgerType</td>
+                    @if (item.LedgerType == Ledger.Enum.LedgerType.支出)
+                    {
+                        @ShowTdWithColor("#FF3333", item.LedgerType.ToString());
+                    }
+                    else
+                    {
+                        @ShowTdWithColor("#5599FF", item.LedgerType.ToString());
+                    }
                     <td>@item.Date.ToString("yyyy-MM-dd")</td>
                     <td>@item.Amount.ToString("#,##")</td>
                 </tr>

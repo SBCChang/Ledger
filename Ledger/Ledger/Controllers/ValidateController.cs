@@ -8,16 +8,10 @@ namespace Ledger.Controllers
 {
     public class ValidateController : Controller
     {
-        // GET: Validate
-        public ActionResult Index()
-        {
-            return View();
-        }
 
-        public ActionResult DateFormat(DateTime dateTime)
+        public ActionResult DateFormat(DateTime date)
         {
-            bool result = (dateTime.Date <= DateTime.Now.Date);
-
+            bool result = (date.Date <= DateTime.Now.Date);
             return Json(result, JsonRequestBehavior.AllowGet);
         }
 

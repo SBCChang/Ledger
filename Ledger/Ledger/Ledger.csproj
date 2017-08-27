@@ -201,7 +201,6 @@
   <ItemGroup>
     <Folder Include="fonts\" />
     <Folder Include="Scripts\" />
-    <Folder Include="Views\Validate\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">
