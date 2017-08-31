@@ -32,6 +32,7 @@ namespace Ledger.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Create(LedgerViewModel ledger)
         {
             if (ModelState.IsValid)
@@ -48,7 +49,7 @@ namespace Ledger.Controllers
                 _ledgerService.Save();
                 return RedirectToAction("Index");
             }
-            return View(ledger);
+            return View("Index", ledger);
         }
 
     }

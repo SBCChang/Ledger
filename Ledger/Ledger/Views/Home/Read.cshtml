@@ -1,5 +1,9 @@
 ﻿@model IPagedList<LedgerViewModel>
 
+@{
+    Layout = null;
+}
+
 @helper ShowTdWithColor(string color, string text)
 {
     <td bgcolor="@color">@text</td>
@@ -10,7 +14,7 @@
         <table class="table table-bordered table-hover">
             <tr>
                 <th>#</th>
-                <th>@Html.LabelFor(l=>l.FirstOrDefault().LedgerType)</th>
+                <th>@Html.LabelFor(l => l.FirstOrDefault().LedgerType)</th>
                 <th>@Html.LabelFor(l => l.FirstOrDefault().Date)</th>
                 <th>@Html.LabelFor(l => l.FirstOrDefault().Amount)</th>
             </tr>

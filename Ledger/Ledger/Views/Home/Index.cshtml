@@ -4,6 +4,8 @@
     ViewBag.Title = "我的記帳本";
 }
 
+@(ViewData["Message"])
+
 <div class="well">
     @using (Html.BeginForm("Create", "Home", FormMethod.Post, new { @class = "form-horizontal" }))
     {
