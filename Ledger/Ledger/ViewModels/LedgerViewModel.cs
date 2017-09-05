@@ -13,6 +13,7 @@ namespace Ledger.ViewModels
 
         [Required]
         [Display(Name = "日期")]
+        [UIHint("Date")]
         [RemoteDoublePlus("BeforeToday", "Validate", "", ErrorMessage = "日期不得大於今天")]
         public DateTime Date { get; set; }
 
