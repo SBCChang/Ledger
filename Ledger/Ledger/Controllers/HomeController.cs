@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace Ledger.Controllers
 {
+    [RoutePrefix("SkillTree")]
     public class HomeController : Controller
     {
         private readonly LedgerService _ledgerService;
@@ -18,6 +19,7 @@ namespace Ledger.Controllers
             _ledgerService = new LedgerService(unitOfWork);
         }
 
+        [Route]
         public ActionResult Index()
         {
             return View();
@@ -26,7 +28,16 @@ namespace Ledger.Controllers
         [ChildActionOnly]
         public ActionResult Read(int? page)
         {
-            var result = _ledgerService.GetList().ToPagedList(page ?? 1, _pageSize);
+            var result = _ledgerService.GetAllList().ToPagedList(page ?? 1, _pageSize);
+
+            return View(result);
+        }
+
+        [Route("{year:range(0001,9999)}/{month:range(1,12)}")]
+        public ActionResult ReadYearMonth(int year, int month, int? page)
+        {
+            var result = _ledgerService.GetListByYearAndMonth(year, month)
+                                       .ToPagedList(page ?? 1, _pageSize);
 
             return View(result);
         }

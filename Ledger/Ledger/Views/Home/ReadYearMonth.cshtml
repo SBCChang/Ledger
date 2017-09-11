@@ -1,12 +1,8 @@
 ﻿@model IPagedList<LedgerViewModel>
 
-@{
-    Layout = null;
-}
-
 <div class="row">
     <div class="col-md-12">
         @Html.Partial("_LedgerTable", Model)
-        @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+        @Html.PagedListPager(Model, page => Url.Action("ReadYearMonth", new { page }))
     </div>
 </div>

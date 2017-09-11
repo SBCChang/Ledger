@@ -17,7 +17,7 @@ namespace Ledger.Models
             _accountBookRep = new Repository<AccountBook>(_unitOfWork);
         }
 
-        public IList<LedgerViewModel> GetList()
+        public IList<LedgerViewModel> GetAllList()
         {
             return _accountBookRep.GetAllData().Select(a => new LedgerViewModel
             { 
@@ -25,6 +25,16 @@ namespace Ledger.Models
                 Amount = a.Amounttt,
                 Date = a.Dateee
             }).OrderBy(a=>a.Date).ToList();
+        }
+
+        public IList<LedgerViewModel> GetListByYearAndMonth(int year, int month)
+        {
+            return _accountBookRep.Query(a => a.Dateee.Year == year && a.Dateee.Month == month).Select(a => new LedgerViewModel
+            {
+                LedgerType = (LedgerType)a.Categoryyy,
+                Amount = a.Amounttt,
+                Date = a.Dateee
+            }).OrderBy(a => a.Date).ToList();
         }
 
         public void Add(AccountBook accountBook)
