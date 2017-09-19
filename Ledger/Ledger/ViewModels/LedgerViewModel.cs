@@ -17,6 +17,7 @@ namespace Ledger.ViewModels
         [RemoteDoublePlus("BeforeToday", "Validate", "", ErrorMessage = "日期不得大於今天")]
         public DateTime Date { get; set; }
 
+        [DataType(DataType.Currency)]
         [Required]
         [Range(1, int.MaxValue, ErrorMessage = "必須為正整數")]
         [Display(Name = "金額")]

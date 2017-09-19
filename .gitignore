@@ -288,3 +288,17 @@ __pycache__/
 *.xsd.cs
 /Ledger/Ledger/Migrations
 /Ledger/Ledger/Models
+/Ledger/Ledger/Content/themes/base/tooltip.css
+/Ledger/Ledger/Content/themes/base/accordion.css
+/Ledger/Ledger/Content/themes/base/autocomplete.css
+/Ledger/Ledger/Content/themes/base/sortable.css
+/Ledger/Ledger/Content/themes/base/slider.css
+/Ledger/Ledger/Content/themes/base/selectmenu.css
+/Ledger/Ledger/Content/themes/base/selectable.css
+/Ledger/Ledger/Content/themes/base/resizable.css
+/Ledger/Ledger/Content/themes/base/progressbar.css
+/Ledger/Ledger/Content/themes/base/menu.css
+/Ledger/Ledger/Content/themes/base/draggable.css
+/Ledger/Ledger/Content/themes/base/dialog.css
+/Ledger/Ledger/Content/themes/base/datepicker.css
+/Ledger/Ledger/Content/themes/base/tabs.css
