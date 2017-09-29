@@ -3,6 +3,7 @@ using Ledger.Repositories;
 using Ledger.ViewModels;
 using PagedList;
 using System;
+using System.Configuration;
 using System.Web.Mvc;
 
 namespace Ledger.Controllers
@@ -11,7 +12,7 @@ namespace Ledger.Controllers
     public class HomeController : Controller
     {
         private readonly LedgerService _ledgerService;
-        private readonly int _pageSize = 10;
+        private readonly int _pageSize = int.Parse(ConfigurationManager.AppSettings["PageSize"]);
 
         public HomeController()
         {

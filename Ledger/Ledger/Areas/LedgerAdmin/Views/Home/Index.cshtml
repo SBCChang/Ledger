@@ -1,11 +1,16 @@
 ﻿@model IPagedList<LedgerViewModel>
 
+@{
+    ViewBag.Title = "管理者專區";
+}
+
 <table class="table table-bordered table-hover">
     <tr>
         <th>#</th>
         <th>@Html.DisplayNameFor(l => l.FirstOrDefault().LedgerType)</th>
         <th>@Html.DisplayNameFor(l => l.FirstOrDefault().Date)</th>
         <th>@Html.DisplayNameFor(l => l.FirstOrDefault().Amount)</th>
+        <th>@Html.DisplayNameFor(l => l.FirstOrDefault().Remark)</th>
     </tr>
     @{var index = 1;}
     @foreach (var item in Model)
@@ -22,6 +27,18 @@
             }
             <td>@item.Date.ToString("yyyy-MM-dd")</td>
             <td>@item.Amount.ToString("#,##")</td>
+            @if (item.Remark.Length > 10)
+            {
+                <td>@item.Remark.Substring(0, 10)...</td>
+            }
+            else
+            {
+                <td>@item.Remark</td>
+            }
+            <td>
+                @Html.ActionLink("編輯", "Edit", new { id = item.Id }) 
+            </td>
         </tr>
     }
 </table>
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
