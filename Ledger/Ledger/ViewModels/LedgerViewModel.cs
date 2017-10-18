@@ -1,7 +1,9 @@
 ﻿using Ledger.Enum;
 using Ledger.Filters;
+using Ledger.ValidateAttribute;
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.Web.Mvc;
 
 namespace Ledger.ViewModels
 {
@@ -17,7 +19,8 @@ namespace Ledger.ViewModels
         [Required]
         [Display(Name = "日期")]
         [UIHint("Date")]
-        [RemoteDoublePlus("BeforeToday", "Validate", "", ErrorMessage = "日期不得大於今天")]
+        //[Remote("BeforeToday", "Validate", ErrorMessage = "日期不得大於今天")]
+        [BeforeToday(ErrorMessage = "日期不得大於今天")]
         public DateTime Date { get; set; }
 
         [UIHint("Numeric")]

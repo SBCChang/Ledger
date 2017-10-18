@@ -173,6 +173,7 @@
     <Compile Include="Repositories\IUnitOfWork.cs" />
     <Compile Include="Repositories\EFUnitOfWork.cs" />
     <Compile Include="Repositories\Repository.cs" />
+    <Compile Include="ValidateAttribute\BeforeTodayAttribute.cs" />
     <Compile Include="ViewModels\LedgerViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
