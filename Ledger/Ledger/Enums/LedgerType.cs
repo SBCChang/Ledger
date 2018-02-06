@@ -1,4 +1,4 @@
-﻿namespace Ledger.Enum
+﻿namespace Ledger.Enums
 {
     public enum LedgerType
     {

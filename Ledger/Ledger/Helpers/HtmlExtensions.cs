@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace Ledger.Helper
+namespace Ledger.Helpers
 {
     public static class HtmlExtensions
     {

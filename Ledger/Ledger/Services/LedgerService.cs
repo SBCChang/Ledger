@@ -1,4 +1,4 @@
-﻿using Ledger.Enum;
+﻿using Ledger.Enums;
 using Ledger.Repositories;
 using Ledger.ViewModels;
 using System;

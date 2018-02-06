@@ -77,7 +77,7 @@ namespace Ledger.Areas.LedgerAdmin.Controllers
                 _ledgerService.Save();
                 return RedirectToAction("Index");
             }
-            return View("Index", ledger);
+            return View(ledger);
         }
 
     }
